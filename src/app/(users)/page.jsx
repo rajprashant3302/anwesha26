@@ -1011,12 +1011,20 @@ const Home = () => {
                                 {/* <div className={styles.tshirt_blue} /> */}
                             </div>
                             <div className={styles.merch_button}>
-                                <button
+                                {/* <button
                                     className={styles.sexy_button}
                                     onClick={() =>
                                         window.open(
                                             'https://docs.google.com/forms/d/1B6yMQs6Y8UV5GDrnxYipGIrDWCY4mcZZvPVboi5Q1nU/edit'
                                         )
+                                    }
+                                >
+                                    GRAB NOW
+                                </button> */}
+
+                                                                <button
+                                    className={styles.sexy_button}
+                                    onClick={()=>{router.push('/store')}
                                     }
                                 >
                                     GRAB NOW

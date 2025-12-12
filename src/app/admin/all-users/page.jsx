@@ -20,7 +20,7 @@ export default function AllUsersPage() {
   const [isLastPage, setIsLastPage] = useState(false);
   const [pageHistory, setPageHistory] = useState([]);
   
-  const USERS_PER_PAGE = 20;
+  const USERS_PER_PAGE = 10;
 
   useEffect(() => {
     fetchFirstPage();

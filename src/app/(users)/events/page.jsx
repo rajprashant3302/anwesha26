@@ -18,6 +18,61 @@ const workshopcardarr = [
     poster: "/events/workshopPoster.jpeg",
     Event: "2 days of workshop",
   },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
+  {
+    "Event Name": "techgyan x Anwesha",
+    poster: "/events/workshopPoster.jpeg",
+    Event: "2 days of workshop",
+  },
 ];
 
 const SponsorsSlider = ({ images, animation_duration = -1 }) => {
@@ -213,15 +268,15 @@ const Events = () => {
           </a>
         </div>
         <div className={styles.titleBox}>
-          <div className={styles.centergroup}>
+          {/* <div className={styles.centergroup}>
             <img src="/events/center_material.svg" alt="" />
-          </div>
-          <div className={styles.titletext}>EXPLORE THE EVENTS</div>
+          </div> */}
+          <div className={styles.titletext}>SEARCH THE EVENTS</div>
         </div>
         <div className={`${styles.searchContainer}`}>
-          <div className={styles.leftgroup}>
+          {/* <div className={styles.leftgroup}>
             <img src="/events/left_material.svg" alt="" />
-          </div>
+          </div> */}
           <div className={`${styles.searchbox}`}>
             <input
               className={styles.searchbar}
@@ -232,9 +287,9 @@ const Events = () => {
             />
             <img src="/events/search_icon.svg" alt="" />
           </div>
-          <div className={styles.rightgroup}>
+          {/* <div className={styles.rightgroup}>
             <img src="/events/right_material.svg" alt="" />
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.cardContainer}>
@@ -259,11 +314,26 @@ const Events = () => {
       </div>
 
       <div className={styles.workshopContainer}>
-        <div className={styles.workshoptitletext}>Workshops</div>
+        <div className={styles.titletext}>EXPLORE THE EVENTS</div>
         <div className={styles.cardContainer}>
           {workshopcardarr.map((item, idx) => (
-            <Card onClick={handleWorkshopNavigation} key={idx} event={item} />
+            // <Card onClick={handleWorkshopNavigation} key={idx} event={item} />
+            <Card
+              onClick={() => openModal(item)}
+              key={idx}
+              event={item}
+              closeHandler={closeModal} />
+              
           ))}
+          {isModalOpen && (
+          <Modal
+            title={
+              (selectedEvent.name || selectedEvent.Name || "").split("#")[0]
+            }
+            body={selectedEvent}
+            closeHandler={closeModal}
+          />
+        )}
         </div>
       </div>
 

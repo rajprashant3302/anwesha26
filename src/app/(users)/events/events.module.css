@@ -13,12 +13,13 @@
             rgba(0, 0, 0, 1) 70%, /* Darker towards the edges */
             rgba(0, 0, 0, 1) 100% /* Fully black at the edges */
         ),
-    url("/events/bgImg.png"); /* Add your image */
+    /* url("/events/bgImg.png");  */
+    url("/backdrop.jpg"); 
 
-    background-position: center 120px; /* Center the images horizontally */
+    background-position: center -40px; /* Center the images horizontally */
     background-repeat: repeat-y; /* Repeat images in the Y-direction */
     background-size: cover; /* Set the image dimensions */
-    background-blend-mode: overlay; /* Blend the image with the black background */
+    background-blend-mode: overlay; 
 
    
 }
@@ -30,10 +31,25 @@
     flex-direction: column;
    
     align-items: center;
-    padding-top: 12vh;
+    margin-top: 8vh;
+    padding:10px;
     transition: opacity 0.5s ease-in-out;
-    width: 90vw;
+    width: 99vw;
     margin-bottom: 40px;
+    background-image: 
+    radial-gradient(
+            circle at center, 
+            rgba(255, 255, 255, 0.2) 0%, /* Brighter center */
+            rgba(0, 0, 0, 1) 70%, /* Darker towards the edges */
+            rgba(0, 0, 0, 1) 100% /* Fully black at the edges */
+        ),
+    /* url("/events/bgImg.png");  */
+    url("/backdrop_events.jpg"); 
+
+    background-position: center -40px; /* Center the images horizontally */
+    background-repeat: repeat-y; /* Repeat images in the Y-direction */
+    background-size: cover; /* Set the image dimensions */
+    background-blend-mode: overlay; 
     
 }
 
@@ -52,12 +68,13 @@
     justify-content: space-between;
     align-items: center;
     transition: opacity 0.5s ease-in-out;
-    border-bottom: 1px solid var(--Color-Primary500, #50FF00);
+    /* border-bottom: 1px solid var(--Color-Primary500, #50FF00); */
+    border-bottom: 1px solid white;
     background: #000;
 
     /* My Shadow 2 */
-    box-shadow: 4.123px -104.442px 29.546px 0px rgba(0, 0, 0, 0.02), 2.748px -66.651px 26.798px 0px rgba(0, 0, 0, 0.15), 1.374px -37.792px 22.675px 0px rgba(0, 0, 0, 0.50), 0.687px -16.491px 16.491px 0px rgba(0, 0, 0, 0.85), 0px -4.123px 8.933px 0px rgba(0, 0, 0, 0.98);
-    -webkit-backdrop-filter: blur(30.920454025268555px);
+    /* box-shadow: 4.123px -104.442px 29.546px 0px rgba(0, 0, 0, 0.02), 2.748px -66.651px 26.798px 0px rgba(0, 0, 0, 0.15), 1.374px -37.792px 22.675px 0px rgba(0, 0, 0, 0.50), 0.687px -16.491px 16.491px 0px rgba(0, 0, 0, 0.85), 0px -4.123px 8.933px 0px rgba(0, 0, 0, 0.98); */
+    /* -webkit-backdrop-filter: blur(30.920454025268555px); */
 }
 .searchbar {
    
@@ -161,7 +178,8 @@ flex-shrink: 0;
     height: 100%;           /* Ensure the height is sufficient for vertical centering */
 }
 .titletext {
-    color: var(--Color-Primary500, #50FF00);
+    /* color: var(--Color-Primary500, #50FF00); */
+    color:white;
     text-align: center;
     font-family: "SF Ironsides", sans-serif;
     font-size: 64px;
@@ -170,7 +188,7 @@ flex-shrink: 0;
     line-height: 100%; /* 64px */
     text-transform: uppercase;
 
-    background: #000;
+    background: rgba(0, 0, 0, 0.7);;
 
     /* Thick shadow in all directions */
     box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5), 
@@ -180,6 +198,8 @@ flex-shrink: 0;
 
     /* Optional blur for a soft effect */
     -webkit-backdrop-filter: blur(15px);
+
+    
 
 }
 
@@ -202,6 +222,7 @@ flex-shrink: 0;
     gap: 32px;
     max-width: 1065px;
     margin-top: 63px;
+    padding-bottom:20px;
 }
 
 
@@ -220,10 +241,16 @@ flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 50px;
-    margin-top: 100px;
-    width: 90vw;
+    /* margin-bottom: 50px; */
+    margin-top: -40px;
+    padding-top: 50px;;
+    width: 99vw;
     align-items: center;
+    background: #000;
+    background-image: url("/backdrop2_events.png");
+    background-position: center 90px;
+    background-size: 500px;
+    background-repeat: repeat-y ;
 }
 
 .workshoptitletext{
@@ -283,7 +310,8 @@ flex-shrink: 0;
 
 
 .sponsors{
-    background: #000300;
+    /* background: #000300; */
+    background: #0E0117;
     display: flex;
     width: 100%;
     padding-bottom: 48px;
@@ -302,7 +330,8 @@ flex-shrink: 0;
     min-width: 500px;
 }
 .sponsors_title > h2{
-    color: var(--Color-Primary500, #50FF00);
+    /* color: var(--Color-Primary500, #50FF00); */
+    color: white;
 
     /* SF/SF - 64 Reg */
     font-family: "SF Ironsides";

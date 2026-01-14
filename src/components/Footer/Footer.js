@@ -21,7 +21,7 @@ const Footer = () => {
                 <div className={styles.footer_upper}>
                     <div className={styles.foter_logo}>
                         <Image
-                            src="/pics/footer/logo.svg"
+                            src="/anweshaLogo.png"
                             alt="Image description"
                             width={394.55}
                             height={225.76}

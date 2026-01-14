@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthUserProvider } from "@/context/AuthUserContext";
-import { CartProvider  } from "@/context/CartContext";
+import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer/Footer";
@@ -35,17 +35,22 @@ export default function RootLayout({
       >
         <AuthUserProvider>
           <CartProvider >
-          <Navbar />
-          {children}
-          <Toaster position="top-right" reverseOrder={false} />
-          <Footer />
+            <Navbar />
+            {children}
+            <Toaster position="top-right" reverseOrder={false} />
+            <Footer />
           </CartProvider>
         </AuthUserProvider>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap"
+          rel="stylesheet"
+        />
+
 
         {/* 🔥 Razorpay SDK Must Be Here */}
-        <Script 
-          src="https://checkout.razorpay.com/v1/checkout.js" 
-          strategy="lazyOnload" 
+        <Script
+          src="https://checkout.razorpay.com/v1/checkout.js"
+          strategy="lazyOnload"
         />
 
       </body>

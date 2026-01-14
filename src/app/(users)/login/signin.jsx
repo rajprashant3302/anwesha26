@@ -64,74 +64,103 @@ export default function Signin() {
       </div>
     );
   }
-
+// font-[SF_Ironside] 
   return (
-    <div className="flex font-[SF_Ironside] tracking-widest bg-[url('/pics/registerBg.jpg')]  items-center justify-center min-h-[100vh] bg-cover bg-center px-2 sm:px-5">
-      <div className="rounded-3xl shadow-2xl border border-white p-10 w-full max-w-md bg-white/80 text-center animate-fade-in">
-        <h3 className="text-5xl text-slate-800 font-extrabold mb-8">Welcome Back</h3>
+    <div className="flex  tracking-widest bg-[url('/backdrop_login.png')]  items-center justify-center min-h-[100vh] bg-cover bg-center px-2 sm:px-5">
+      <div className=" shadow-2xl border  p-10 w-full max-w-lg bg-black/95  animate-fade-in">
+        <h3
+        style={{ fontFamily: "'Cinzel Decorative', serif" }} 
+        className="text-3xl   sm:text-4xl text-white text-center font-extrabold mb-8">Welcome Back</h3>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* EMAIL FIELD */}
+          <div className="flex flex-col gap-2">
+            <label className="text-sm tracking-widest text-white">
+            Email ID
+          </label>
+          
           <div className="relative">
-            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600" size={20} />
+            {/* write label for email label for email  */}
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white" size={20} />
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder="Email your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 text-xl rounded-xl text-black bg-white/60 outline-none border-2 border-transparent 
-                  focus:border-blue-400 focus:ring-2 focus:ring-blue-200 placeholder-gray-500"
+              className="w-full pl-12 pr-4 py-3 text-xl  text-white bg-[#141414] outline-none border-2 border-transparent 
+                  focus:border-white  focus:ring-white placeholder-white"
               required
             />
           </div>
+          </div>
 
           {/* PASSWORD FIELD */}
+          <div className="flex flex-col gap-2">
+            <label className="text-sm tracking-widest text-white">
+            Password
+          </label>
           <div className="relative">
-            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600" size={20} />
+            {/* write label for password  */}
+            <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-white" size={20} />
 
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full pl-12 pr-12 text-xl py-3 rounded-xl text-black bg-white/60 outline-none border-2 border-transparent 
-                  focus:border-green-400 focus:ring-2 focus:ring-green-200 placeholder-gray-500"
+              className="w-full pl-12 pr-12 text-xl py-3 text-white bg-[#141414] outline-none border-2 border-transparent 
+                  focus:border-white placeholder-white"
               required
             />
 
             <button
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 hover:text-black transition"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white"
             >
               {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
             </button>
+          </div>
           </div>
 
           {/* 👉 FORGOT PASSWORD OPTION */}
           <p
             onClick={() => router.push("/forgot-password")}
-            className="text-right text-lg text-blue-700 font-semibold cursor-pointer hover:underline -mt-3"
+            className="text-right text-md sm:text-lg text-white font-semibold cursor-pointer hover:underline -mt-3"
           >
             Forgot Password?
           </p>
 
-          {/* LOGIN BUTTON */}
-          <button
-            type="submit"
-            disabled={isDisabled}
-            className="w-full text-2xl cursor-pointer tracking-widest bg-[url('/bg_2_cropped.jpg')] bg-cover bg-bottom rounded-xl text-white py-2 hover:scale-102 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isDisabled ? "Signing In..." : "Sign In"}
-          </button>
+         {/* login button  */}
+
+<button
+  type="submit"
+  disabled={isDisabled}
+  style={{ backgroundImage: "url('/button_login.png')" }}
+  className="
+    w-full h-16
+    bg-cover bg-center
+    rounded-xl
+    transition hover:scale-105
+    disabled:opacity-50
+  "
+>
+  <span className="text-white text-2xl font-bold tracking-widest
+    drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]
+  ">
+    {isDisabled ? "Signing In..." : "SIGN IN"}
+  </span>
+</button>
+
+
         </form>
 
         {/* Redirect */}
-        <p className="mt-6 text-lg text-gray-600">
+        <p className="mt-6 text-md md:text-lg text-center text-white">
           Don’t have an account?
           <span
             onClick={() => router.push("/register")}
-            className="text-[#095DB7] font-semibold text-xl cursor-pointer hover:underline"
+            className="font-semibold text-lg md:text-xl cursor-pointer hover:underline"
           >
             Sign Up
           </span>
